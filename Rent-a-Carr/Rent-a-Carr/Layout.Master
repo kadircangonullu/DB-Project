@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Şahin OTO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Araba Kiralama Sitesi kurulumu oto kiralama ve rent a car firmalarına yönetim panelli rent a car siteleri yapan ucuz rent a car web sitesi firması">
+    <meta name="keywords" content="rent a car sitesi kurulumu, oto kiralma sitesi yapımı, rent a car scripti, rent a car web sitesi, rent a car sitesi, rent a car yazılımı, rent a car web tasarım, oto kiralama sitesi yaptırmak, rent a car sitesi yaptırmak, hazır rent a car sitesi, rent a car web tasarım, ucuz rent a car sitesi">
+    <meta name="robots" content="index,follow">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-6N7WH0F8S4&amp;l=dataLayer&amp;cx=c"></script>
+    <script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/theme/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-213500046-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-213500046-1');
+    </script>
+
+
+        <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            position: relative;
+        }
+
+        .footbar {
+            /* Your existing styles for .footbar go here */
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .fooaltbar{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="mobdilpara mobonly">
+        <div class="parabirimi">
+            <label>
+                <strong>TRY</strong>
+                <span class="glyphicon glyphicon-chevron-down">&nbsp;</span>
+
+                <div class="birimacilir" style="display: none;">
+                    <a href="javascript:void(0);" onclick="setparabirimi(0);">TRY</a>
+                </div>
+            </label>
+        </div>
+        <div class="langselector">
+            <label>
+                <img alt="Türkçe" src="https://tema19.otokiralamascripti.net/images/lang/tr.png">
+                <span class="glyphicon glyphicon-chevron-down">&nbsp;</span>
+
+                <div class="dilacilir" style="display: none;">
+                    <a href="javascript:void(0);" onclick="setdil('tr');">
+                        <img alt="Türkçe" src="https://tema19.otokiralamascripti.net/images/lang/tr.png"></a>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="midbar">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="col-md-2 logo">
+                    <a href="#" class="mobhide ultrahide">
+                        <img alt="Araba Kiralama Sitesi" src="https://tema19.otokiralamascripti.net/images/first-class-rent-a-car.png"></a>
+                    <div class="mobonly wptel">
+                        <a href="https://tema19.otokiralamascripti.net/" class="lofirsta">
+                            <img alt="Araba Kiralama Sitesi" src="https://tema19.otokiralamascripti.net/images/first-class-rent-a-car.png"></a><br>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-10 rtext contact">
+                    <div class="menubar">
+                        <div class="container">
+                            <div class="col-md-12">
+                                <label class="menubaropener">
+                                    <div><span class="glyphicon glyphicon-menu-hamburger"></span>MENU</div>
+                                    <a href="tel:+905443240060" target="_blank">0 544 324 00 60</a></label>
+
+                                <a href="Deneme1.aspx" class="menua">ANASAYFA</a>
+                                <a href="#" class="menua">HAKKIMIZDA</a>
+                                <a href="CarList.aspx" class="menua">FİYAT LİSTESİ</a>
+                                <a href="#" class="menua">TRANSFER</a>
+                                <a href="#" class="menua">İADE SAYFASI</a>
+                                <a href="#" class="menua">S.S.S.</a>
+                                <a href="#" class="menua">İLETİŞİM</a>
+
+                                <a href="#" class="menua">ÜYE GİRİŞİ &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
+
+                                <div class="parabirimi">
+                                    <label>
+                                        <strong>TRY</strong>
+                                        <span class="glyphicon glyphicon-chevron-down">&nbsp;</span>
+
+                                        <div class="birimacilir" style="display: none;">
+                                            <a href="javascript:void(0);" onclick="setparabirimi(0);">TRY</a>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="langselector">
+                                    <label>
+                                        <img alt="Türkçe" src="https://tema19.otokiralamascripti.net/images/lang/tr.png">
+                                        <span class="glyphicon glyphicon-chevron-down">&nbsp;</span>
+
+                                        <div class="dilacilir" style="display: none;">
+                                            <a href="javascript:void(0);" onclick="setdil('tr');">
+                                                <img alt="Türkçe" src="https://tema19.otokiralamascripti.net/images/lang/tr.png"></a>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div class="container">
+        </div>
+    </asp:ContentPlaceHolder>
+
+<!--
+        <div class="footbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <a href="#"><img alt="Araba Kiralama Sitesi" src="https://tema19.otokiralamascripti.net/images/first-class-rent-a-car.png"></a>
+                </div>
+                <div class="col-md-4 rtext">
+                    <div class="socialsfoot">
+                        <a href="https://www.facebook.com/" target="_blank" class="facebook">&nbsp;</a>
+                        <a href="https://twitter.com/" target="_blank" class="twitter">&nbsp;</a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="linkedin">&nbsp;</a>
+                        <a href="https://www.instagram.com/" target="_blank" class="googleplus">&nbsp;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fooaltbar">
+    Kadir OTO © 2023 - Tüm Hakları Saklıdır - <label><a href="#" target="_blank">Oto Kiralama</a></label>
+</div>
+
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/system.js"></script>
+<link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/system.css">
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/theme/js/theme.js"></script>
+<link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/jquery-ui.css">
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/datepicker-tr.js"></script>
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/uilang/datepicker-tr.js"></script>
+<link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/jquery-ui-timepicker-addon.css">
+<script type="text/javascript">
+    lang_operror = 'İşlem gerçekleştirilirken bir hata oluştu!';
+    lang_afterselect = 'Lütfen seçim yaptıktan sonra tekrar deneyin!';
+    lang_loading = 'Yükleniyor, lütfen bekleyin!';
+    $.timepicker.setDefaults($.timepicker.regional['tr']);
+</script>
+
+    -->
+
+<!-- SHORTCUTS -->
+<!--
+<div class="shortcut_container" style="display: block;">
+<a href="https://api.whatsapp.com/send?phone=905433039586" target="_blank" class="shortcut_icon" data-tooltip="Whatsapp Mesajı Gönder"><img src="https://tema19.otokiralamascripti.net/images/shortcut/wp.png" width="100%" height="100%"></a> <a href="https://maps.app.goo.gl/abtfnn3Ut5PDrvub7" target="_blank" class="shortcut_icon" data-tooltip="Haritayı Görüntüle"><img src="https://tema19.otokiralamascripti.net/images/shortcut/map.png" width="100%" height="100%"></a> <a href="tel:0 543 303 95 86" target="_blank" class="shortcut_icon" data-tooltip="Arama Yap"><img src="https://tema19.otokiralamascripti.net/images/shortcut/tel.png" width="100%" height="100%"></a></div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+
+
+-->
+
+</body>
+</html>
