@@ -112,7 +112,7 @@
                                 <a href="#" class="menua">S.S.S.</a>
                                 <a href="#" class="menua">İLETİŞİM</a>
 
-                                <a href="#" class="menua">ÜYE GİRİŞİ &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
+                                <a href="Register.aspx" class="menua">ÜYE GİRİŞİ &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
 
                                 <div class="parabirimi">
                                     <label>
@@ -144,6 +144,11 @@
     </div>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div class="container">
+        </div>
+    </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
         <div class="container">
         </div>
     </asp:ContentPlaceHolder>
