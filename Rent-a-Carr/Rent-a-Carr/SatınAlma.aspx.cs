@@ -9,11 +9,11 @@ using Rent_a_Carr.Classes;
 
 namespace Rent_a_Carr
 {
-    public partial class CarList : System.Web.UI.Page
+    public partial class SatınAlma : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlCommand commandList = new SqlCommand("select * from Vehicles",SqlConnectionClass.connection);
+            SqlCommand commandList = new SqlCommand("select * from Vehicles", SqlConnectionClass.connection);
 
             SqlConnectionClass.CheckConnection();
 
@@ -27,16 +27,5 @@ namespace Rent_a_Carr
 
             dr.Close();
         }
-
-        protected void ProductListRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            if (e.CommandName == "ShowDetails")
-            {
-                string Plate = e.CommandArgument.ToString();
-                // Ürün detaylarını göstermek için yeni sayfaya yönlendir
-                Response.Redirect($"SatınAlma.aspx?ProductID={Plate}");
-            }
-        }
-
     }
 }

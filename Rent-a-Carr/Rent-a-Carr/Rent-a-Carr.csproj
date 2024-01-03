@@ -67,13 +67,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPanel.aspx" />
+    <Content Include="Araç-Çıkarma.aspx" />
+    <Content Include="AraçDüzenleme.aspx" />
+    <Content Include="AraçDüzenlemek.aspx" />
+    <Content Include="AraçEkleme.aspx" />
     <Content Include="CarList.aspx" />
     <Content Include="Deneme1.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Müşteri.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="SatınAlma.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel.aspx.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Araç-Çıkarma.aspx.cs">
+      <DependentUpon>Araç-Çıkarma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Araç-Çıkarma.aspx.designer.cs">
+      <DependentUpon>Araç-Çıkarma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AraçDüzenleme.aspx.cs">
+      <DependentUpon>AraçDüzenleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AraçDüzenleme.aspx.designer.cs">
+      <DependentUpon>AraçDüzenleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AraçDüzenlemek.aspx.cs">
+      <DependentUpon>AraçDüzenlemek.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AraçDüzenlemek.aspx.designer.cs">
+      <DependentUpon>AraçDüzenlemek.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AraçEkleme.aspx.cs">
+      <DependentUpon>AraçEkleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AraçEkleme.aspx.designer.cs">
+      <DependentUpon>AraçEkleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs" />
     <Compile Include="CarList.aspx.cs">
       <DependentUpon>CarList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,6 +147,20 @@
     <Compile Include="Layout.Master.designer.cs">
       <DependentUpon>Layout.Master</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Müşteri.aspx.cs">
+      <DependentUpon>Müşteri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Müşteri.aspx.designer.cs">
+      <DependentUpon>Müşteri.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -103,6 +168,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SatınAlma.aspx.cs">
+      <DependentUpon>SatınAlma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SatınAlma.aspx.designer.cs">
+      <DependentUpon>SatınAlma.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -114,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Layout.Master" />
+    <Content Include="Admin.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

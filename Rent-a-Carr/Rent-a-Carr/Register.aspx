@@ -33,7 +33,7 @@
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-envelope"></span>
                                     </div>
-                                    <asp:TextBox ID="txtUsername" CssClass="form-control half" placeholder="E-posta Adresi..." runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtUsername" CssClass="form-control half" placeholder="İsminiz..." runat="server"></asp:TextBox>
                                     <!--<input class="form-control half" name="email" type="text" placeholder="E-posta Adresi..." required="">-->
                                 </div>
                             </div>

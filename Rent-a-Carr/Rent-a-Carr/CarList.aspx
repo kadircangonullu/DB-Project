@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html lang="tr">
     <head>
+        <style>
+
+        </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Fiyat Listesi - Araba Kiralama Sitesi</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -94,7 +97,7 @@
                                 <div class="araclisting" style="margin: 0px 130px">
                                     <div class="row">
                                         <div class="col-md-4 ctext">
-                                            <asp:Image ID="Image2" runat="server"  ImageUrl='<%# Eval("Photo") %>' />
+                                            <asp:Image ID="Image2" runat="server"  src='<%# Eval("Photo") %>' />
                                             <label class="green"><span class="glyphicon glyphicon-ok"></span>Araç Müsait</label> <!-- buraya müsait mi değil mi diye veritabanından bilgi çekicez -->
                                         </div>
                                         <div class="col-md-5 nopadright">
@@ -116,8 +119,8 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="aracsec">
-                                                <label class="fiyatlab">1-3 Gün Aralığı <span>90.00 TRY</span></label><label class="fiyatlab">4-7 Gün Aralığı <span>80.00 TRY</span></label><label class="fiyatlab">8-15 Gün Aralığı <span>70.00 TRY</span></label><label class="fiyatlab">16-30 Gün Aralığı <span>60.00 TRY</span></label>
-                                                <a href="https://tema19.otokiralamascripti.net/rezervasyon/45-citroen-nemo-kirala" class="btn turanj full martoplow">Hemen Kiralayın</a>
+                                                <label class="fiyatlab">1-3 Gün Aralığı <span>90.00 TRY</span></label>
+                                                <asp:LinkButton runat="server" CommandName="ShowDetails" CommandArgument='<%# Eval("Plate") %>'>Hemen Kiralayın</asp:LinkButton>
                                             </div>
                                         </div>
                                     </div>

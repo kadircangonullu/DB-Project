@@ -1,13 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Rent_a_Carr.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="Rent_a_Carr.AdminPanel" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Araç Ekleme Formu</title>
+  <title>Araç Kiralama Admin Paneli</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,6 +20,19 @@
       text-align: center;
     }
 
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1em;
+    }
+
     section {
       max-width: 600px;
       margin: 2em auto;
@@ -32,19 +42,46 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
     }
 
-    label {
-      margin-bottom: 0.5em;
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
     }
 
     input, select, button {
       margin-bottom: 1em;
       padding: 8px;
       font-size: 16px;
+    }
+
+    input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+      padding: 8px;
+    }
+
+    
+    label {
+      margin-bottom: 0.5em;
     }
 
     button {
@@ -58,19 +95,26 @@
       height: auto;
       margin-top: 1em;
     }
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Araç Ekleme Formu</h1>
+    <h1>Araç Kiralama Admin Paneli</h1>
   </header>
+
+  <nav>
+    <a href="AdminPanel.aspx">Araç Ekle</a>
+    <a href="AraçÇıkarma.aspx">Araç Çıkar</a>
+    <a href="AraçDüzenleme.aspx">Araç Düzenle</a>
+    <a href="Müşteri.aspx">Müşteri Görüntüle</a>
+  </nav>
 
   <section>
     <form id="carForm">
       <label for="brand">Marka:</label>
       <input type="text" id="brand" name="brand" required>
-
       <label for="model">Model:</label>
       <input type="text" id="model" name="model" required>
 
@@ -122,5 +166,3 @@
 
 </body>
 </html>
-
-</asp:Content>
