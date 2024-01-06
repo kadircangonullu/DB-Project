@@ -12,6 +12,7 @@ namespace Rent_a_Carr
 {
     public partial class Login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             lblErrorMessage.Visible = false;
@@ -31,8 +32,10 @@ namespace Rent_a_Carr
                 Response.Redirect("Deneme1.aspx");
             }
             else { lblErrorMessage.Visible = true; }
+
         }
 
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnectionClass.CheckConnection();

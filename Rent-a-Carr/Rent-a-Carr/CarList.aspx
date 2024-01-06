@@ -1,11 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="CarList.aspx.cs" Inherits="Rent_a_Carr.CarList" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="true" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="CarList.aspx.cs" Inherits="Rent_a_Carr.CarList" CodeFile="CarList.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <html lang="tr">
-    <head>
-        <style>
+    <!DOCTYPE html>
 
-        </style>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+
+        <link href="/style.css" rel="stylesheet" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Fiyat Listesi - Araba Kiralama Sitesi</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -16,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/theme/css/theme.css">
         <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/bootstrap.min.css">
         <script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <div class="container firstclear rezcizgi ultrahide">
@@ -88,7 +91,7 @@
         </div>
 
         <form id="form1" runat="server">
-            <asp:DataList ID="DataList1" runat="server" CssClass="row">
+            <asp:DataList ID="DataList1" OnItemCommand="DataList1_ItemCommand" runat="server" CssClass="row">
                 <ItemTemplate>
                     <div class="container martop marbot">
                         <div class="row">
@@ -97,17 +100,23 @@
                                 <div class="araclisting" style="margin: 0px 130px">
                                     <div class="row">
                                         <div class="col-md-4 ctext">
-                                            <asp:Image ID="Image2" runat="server"  src='<%# Eval("Photo") %>' />
-                                            <label class="green"><span class="glyphicon glyphicon-ok"></span>Araç Müsait</label> <!-- buraya müsait mi değil mi diye veritabanından bilgi çekicez -->
+                                            <asp:Image ID="Image2" runat="server" src='<%# Eval("Photo") %>' />
+                                            <label class="green"><span class="glyphicon glyphicon-ok"></span>Araç Müsait</label>
+                                            <!-- buraya müsait mi değil mi diye veritabanından bilgi çekicez -->
                                         </div>
                                         <div class="col-md-5 nopadright">
-                                            <h1><asp:Label Font-Bold="true" ForeColor="Black" class="popcoltitle" ID="Label5" runat="server" Text='<%# Eval("Brand") + " " + Eval("Model") %>'></asp:Label></h1>
+                                            <h1>
+                                                <asp:Label Font-Bold="true" ForeColor="Black" class="popcoltitle" ID="Label5" runat="server" Text='<%# Eval("Brand") + " " + Eval("Model") %>'></asp:Label></h1>
                                             <h2>Yolcu Sayısı: <strong>5</strong> kişiye kadar<br>
                                                 Bagaj Kapasitesi: <strong>5</strong> bavula kadar</h2>
 
                                             <label class="aracozellik">
+                                                <span class="glyphicon glyphicon-scale"></span><strong>Plaka:</strong>
+                                                <asp:Label ID="lbl10p" runat="server" Text='<%# Eval("Plate") %>'></asp:Label>
+                                            </label>
+                                            <label class="aracozellik">
                                                 <span class="glyphicon glyphicon-scale"></span><strong>Yakıt:</strong>
-                                                <asp:Label ID="Label10" runat="server" Text='<%# Eval("FuelType") %>'></asp:Label>
+                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("FuelType") %>'></asp:Label>
                                             </label>
                                             <label class="aracozellik">
                                                 <span class="glyphicon glyphicon-random"></span><strong>Vites:</strong> Manuel                           
@@ -120,7 +129,7 @@
                                         <div class="col-md-3">
                                             <div class="aracsec">
                                                 <label class="fiyatlab">1-3 Gün Aralığı <span>90.00 TRY</span></label>
-                                                <asp:LinkButton runat="server" CommandName="ShowDetails" CommandArgument='<%# Eval("Plate") %>'>Hemen Kiralayın</asp:LinkButton>
+                                                <asp:LinkButton ID="lnkSelect" runat="server" CommandName="Select">Select</asp:LinkButton>
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using Rent_a_Carr.Classes;
+using System.Data;
 
 namespace Rent_a_Carr
 {
@@ -13,19 +14,22 @@ namespace Rent_a_Carr
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlCommand commandList = new SqlCommand("select * from Vehicles", SqlConnectionClass.connection);
+            if (!IsPostBack)
+            {
+                string IDD = Convert.ToString(Session["CarID"]);
 
-            SqlConnectionClass.CheckConnection();
+                SqlCommand commandList = new SqlCommand("select * from Vehicles WHERE Plate = @IDD", SqlConnectionClass.connection);
+                commandList.Parameters.AddWithValue("@IDD", IDD);
 
-            SqlDataReader dr = commandList.ExecuteReader();
+                SqlConnectionClass.CheckConnection();
 
-            SqlConnectionClass.CheckConnection();
+                SqlDataReader dr = commandList.ExecuteReader();
 
-            DataList1.DataSource = dr;
+                DataList1.DataSource = dr;
+                DataList1.DataBind();
 
-            DataList1.DataBind();
-
-            dr.Close();
+                dr.Close();
+            }
         }
     }
 }

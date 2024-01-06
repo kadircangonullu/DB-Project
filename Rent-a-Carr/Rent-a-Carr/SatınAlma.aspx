@@ -129,6 +129,7 @@
                                         <h1 class="bigtitle subbed nomartop">Kiralama Süresi</h1>
                                         <span class="bigtext"><span id="gunsayisi">17</span> Gün</span>
                                     </div>
+                                    <asp:Label ID="lblReceivedData" runat="server" Text=""></asp:Label>
                                     <div class="col-md-6">
                                         <h1 class="bigtitle subbed nomartop">Günlük Araç Ücreti</h1>
                                         <asp:Label class="bigtext" ID="Label11" runat="server" Text='<%# Eval("DailyRentalFee") %>'></asp:Label>
