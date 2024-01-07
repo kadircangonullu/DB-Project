@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <html lang="tr" data-adreal-did="1704229942400836">
+    <html lang="tr">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Citroen Nemo  Kirala - Rezervasyon - Araba Kiralama Sitesi</title>
@@ -17,7 +17,7 @@
         <script type="text/javascript">
             var rezmin = 3;
             var rezmintx = 'Kiralama işlemi minimum 3 gün yapılabilir. Lütfen tarih seçiminizi gözden geçirdikten sonra rezervasyon işlemine devam edin!';
-    </script>
+        </script>
     </head>
     <body>
 
@@ -51,105 +51,86 @@
         </div>
 
         <div class="container martop marbot">
-            <h1 class="bigtitle"><strong>Citroen Nemo </strong>
-                <span class="rfloat">
-                    <label class="aracozellik inline"><em class="redstr"><span class="glyphicon glyphicon-scale"></span></em>Dizel</label>
-                    <label class="aracozellik inline"><em class="redstr"><span class="glyphicon glyphicon-random"></span></em>Manuel</label>
-                    <label class="aracozellik inline"><em class="redstr"><span class="glyphicon glyphicon-signal"></span></em>Dijital</label>
-                </span>
-            </h1>
-            <div class="col-md-5 nopadleft mobnopad ctext">
-                <img src="https://tema19.otokiralamascripti.net/images/cars/citroen-nemo-2017-64458385648ae.png" class="rezpagecar rounded">
-            </div>
-            <div class="col-md-7 nopadright rezcont mobnopad">
-                <form action="https://tema19.otokiralamascripti.net/rezervasyon/45-citroen-nemo-kirala" id="rzfrm" method="post" onsubmit="return rezformsb(this, event);" target="_self" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" id="setmeredir" value="https://tema19.otokiralamascripti.net/rezervasyon/45-citroen-nemo-kirala">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1 class="bigtitle subbed nomartop">Alış Yeri</h1>
-
-                            <div class="input-group relative rcigroup">
-                                <input type="hidden" name="alisloc" id="setalisloc" value="65">
-                                <input type="text" style="background: #ffffff;" class="form-control black" id="setalistext" required="required" readonly="readonly" value="Merkez Ofis" placeholder="Alış Yeri">
-
-
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-map-marker"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="bigtitle subbed nomartop">Alış Tarihi</h1>
-                            <div class="input-group rcigroup" id="spectarihselector">
-                                <input type="text" class="form-control ronly datepicker hasDatepicker" value="03/01/2024 03:30" id="datestart" name="alistarih" readonly="readonly" required="" placeholder="Alış Tarihi..." style="background: rgb(255, 255, 255); z-index: 9999999;">
-
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1 class="bigtitle subbed nomartop">Dönüş Yeri</h1>
-
-                            <div class="input-group rcigroup">
-                                <input type="hidden" name="donusloc" id="setdonusloc" value="65">
-                                <input type="text" style="background: #ffffff;" class="form-control black" id="setdonustext" required="required" readonly="readonly" value="Merkez Ofis" placeholder="Dönüş Yeri">
-
-                                <div class="openselector" id="open2" style="display: none;">
-                                    <a href="javascript:void(0);" onclick="showkonumdonus(64,45);"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span> Hatay</a>
-                                    <a href="javascript:void(0);" onclick="showkonumdonus(67,45);"><span class="glyphicon glyphicon-chevron-right">&nbsp;</span> Hatay Otogarı</a>
-                                </div>
-
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-map-marker"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="bigtitle subbed nomartop">Dönüş Tarihi</h1>
-                            <div class="input-group rcigroup">
-                                <input type="text" class="form-control ronly datepicker hasDatepicker" value="20/01/2024 03:30" id="dateend" name="donustarih" readonly="readonly" required="" placeholder="Dönüş Tarihi..." style="background: rgb(255, 255, 255); z-index: 9999999;">
-
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
+            <asp:DataList class="col-md-7 nopadright rezcont mobnopad" ID="DataList1" runat="server">
+                <ItemTemplate>
                     <form id="form1" runat="server">
-                        <asp:DataList ID="DataList1" runat="server" CssClass="row">
-                            <ItemTemplate>
+                        <div class="container martop marbot">
+                            <h1 class="bigtitle"><strong>
+                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("Brand") + " " + Eval("Model") %>'></asp:Label></strong>
+                                <span class="rfloat">
+                                    <label class="aracozellik inline">
+                                        <em class="redstr"><span class="glyphicon glyphicon-scale"></span></em>
+                                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("FuelType")%>'></asp:Label>
+                                    </label>
+                                    <label class="aracozellik inline">
+                                        <em class="redstr"><span class="glyphicon glyphicon-random"></span></em>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Gear")%>'></asp:Label>
+                                    </label>
+                                    <label class="aracozellik inline">
+                                        <em class="redstr"><span class="glyphicon glyphicon-signal"></span></em>
+                                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("Console")%>'></asp:Label>
+                                    </label>
+                                </span>
+                            </h1>
+                            <div class="col-md-5 nopadleft mobnopad ctext">
+                                <asp:Image class="rezpagecar rounded" ID="Image2" runat="server" src='<%# Eval("Photo") %>' />
+                            </div>
+                            <div class="col-md-7 nopadright rezcont mobnopad">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h1 class="bigtitle subbed nomartop">Alış Yeri</h1>
+
+                                        <div class="input-group relative rcigroup">
+                                            <input type="hidden" name="alisloc" id="setalisloc" value="65">
+                                            <input type="text" style="background: #ffffff;" class="form-control black" id="setalistext" required="required" readonly="readonly" value="Merkez Ofis" placeholder="Alış Yeri">
+
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="bigtitle subbed nomartop">Dönüş Yeri</h1>
+
+                                        <div class="input-group rcigroup">
+                                            <input type="hidden" name="donusloc" id="setdonusloc" value="65">
+                                            <input type="text" style="background: #ffffff;" class="form-control black" id="setdonustext" required="required" readonly="readonly" value="Merkez Ofis" placeholder="Dönüş Yeri">
+
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h1 class="bigtitle subbed nomartop">Günlük Kiralama Bedeli</h1>
+                                        <span class="bigtext">
+                                            <asp:Label class="bigtext" ID="Label2" runat="server" Text='<%# Eval("DailyRentalFee") + " TL" %>'></asp:Label></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="bigtitle subbed nomartop">Kiralanacak Gün sayısı</h1>
+                                        <div class="input-group relative rcigroup">
+                                            <input type="number" id="UNumber" oninput="multiplyNumbers()" style="background: #ffffff;" class="form-control black" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <br />
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h1 class="bigtitle subbed nomartop">Kiralama Süresi</h1>
-                                        <span class="bigtext"><span id="gunsayisi">17</span> Gün</span>
+                                        <span class="bigtext"><span id="gunsayisi">3</span> Gün</span>
                                     </div>
-                                    <asp:Label ID="lblReceivedData" runat="server" Text=""></asp:Label>
                                     <div class="col-md-6">
                                         <h1 class="bigtitle subbed nomartop">Günlük Araç Ücreti</h1>
-                                        <asp:Label class="bigtext" ID="Label11" runat="server" Text='<%# Eval("DailyRentalFee") %>'></asp:Label>
+                                        <span class="bigtext">90.00 TRY</span>
                                     </div>
                                 </div>
-                                <div class="row" style="margin-top: 10px !important;">
-                                    <div class="col-md-6">
-                                        <h1 class="bigtitle subbed nomartop">Dropoff Ücreti</h1>
-                                        <span class="bigtext">0.00 TRY</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h1 class="bigtitle subbed nomartop">Toplam Ücret</h1>
-                                        <span class="bigtext">1,020.00 TRY</span>
-                                    </div>
-                                </div>
-                            </ItemTemplate>
-                        </asp:DataList>
+                            </div>
                     </form>
-                </form>
-            </div>
+                </ItemTemplate>
+            </asp:DataList>
         </div>
 
         <form method="post" target="_self" enctype="application/x-www-form-urlencoded" onsubmit="return reserve(this, event);">
@@ -158,7 +139,7 @@
             <div class="container marbot">
                 <div class="col-md-12 total rounded">
                     Toplam Kiralama Ücreti:
-                    <label><span>1,020.00</span> TRY</label>
+                    <label><span id="sonuc"></span> TRY</label>
                 </div>
             </div>
 
@@ -255,6 +236,22 @@
             </div>
         </form>
 
+            <script>
+                function multiplyNumbers() {
+                    // Kullanıcının girdiği sayıyı al
+                    var userInput = document.getElementById("UNumber").value;
+
+                    // Sabit bir sayı ile çarp
+                    var constantNumber = 5;  // Bu sayıyı kendi ihtiyacınıza göre değiştirin
+
+                    var result = userInput * constantNumber;
+
+                    // Sonucu HTML içine yazdır
+                    document.getElementById("sonuc").innerText = result;
+
+                }
+    </script>  </script>>
+
         <script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/system.js"></script>
         <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/system.css">
         <script type="text/javascript" src="https://tema19.otokiralamascripti.net/theme/js/theme.js"></script>
@@ -269,9 +266,12 @@
             lang_afterselect = 'Lütfen seçim yaptıktan sonra tekrar deneyin!';
             lang_loading = 'Yükleniyor, lütfen bekleyin!';
             $.timepicker.setDefaults($.timepicker.regional['tr']);
-</script>
+        </script>
     </body>
     </html>
+
+
+    </div>
 
 
 </asp:Content>

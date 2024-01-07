@@ -15,15 +15,6 @@ namespace Rent_a_Carr
     {
 
         /// <summary>
-        /// form1 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// DataList1 denetimi.
         /// </summary>
         /// <remarks>
