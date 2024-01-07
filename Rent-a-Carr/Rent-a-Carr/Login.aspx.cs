@@ -23,6 +23,7 @@ namespace Rent_a_Carr
             SqlConnectionClass.CheckConnection();
             string query = "SELECT COUNT(1) FROM Customer WHERE Name=@Name AND Password=@Password";
             SqlCommand sqlCmd = new SqlCommand(query, SqlConnectionClass.connection);
+            Session["Userkisi"] = txtUsername.Text;
             sqlCmd.Parameters.AddWithValue("@Name", txtUsername.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
             int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
@@ -35,7 +36,7 @@ namespace Rent_a_Carr
 
         }
 
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnectionClass.CheckConnection();

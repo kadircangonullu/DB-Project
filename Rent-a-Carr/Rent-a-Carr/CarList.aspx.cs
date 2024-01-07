@@ -18,7 +18,9 @@ namespace Rent_a_Carr
 
             if (!IsPostBack)
             {
-                SqlCommand commandList = new SqlCommand("select * from Vehicles", SqlConnectionClass.connection);
+                SqlCommand commandList = new SqlCommand("select * from Vehicles WHERE IsAvailable=@v10", SqlConnectionClass.connection);
+
+                commandList.Parameters.AddWithValue("@v10", 1);
 
                 SqlConnectionClass.CheckConnection();
 
@@ -40,7 +42,7 @@ namespace Rent_a_Carr
                 if (myLabel != null)
                 {
                     Session["CarID"] = myLabel.Text;
-                    System.Diagnostics.Debug.WriteLine($"Session CarID: {Session["CarID"]}");
+                    //System.Diagnostics.Debug.WriteLine($"Session CarID: {Session["CarID"]}");
                     Response.Redirect($"SatınAlma.aspx");
                 }
             }

@@ -107,12 +107,12 @@
                                 <a href="Deneme1.aspx" class="menua">ANASAYFA</a>
                                 <a href="#" class="menua">HAKKIMIZDA</a>
                                 <a href="CarList.aspx" class="menua">FİYAT LİSTESİ</a>
-                                <a href="#" class="menua">TRANSFER</a>
-                                <a href="#" class="menua">İADE SAYFASI</a>
+                                <a href="AdminLoginn.aspx" class="menua">ADMİN PANELİ</a>
+                                <a href="IadeSayfası.aspx" class="menua">İADE SAYFASI</a>
                                 <a href="#" class="menua">S.S.S.</a>
                                 <a href="#" class="menua">İLETİŞİM</a>
 
-                                <a href="Login.aspx" class="menua">ÜYE GİRİŞİ &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
+                                <a href="Login.aspx" class="menua">ÜYE ÇIKIŞI &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
 
                                 <div class="parabirimi">
                                     <label>

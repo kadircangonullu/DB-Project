@@ -39,19 +39,11 @@
                         Kredi kartı ile güvenli ödeme gerçekleştirin               
                     </div>
                 </div>
-                <div class="col-md-4 relat nopad cizgicont">
-                    <div class="cizgi">&nbsp;</div>
-                    <div class="cizgion">
-                        <label>3</label>
-                        <strong>Rezervasyon Onayı</strong>
-                        Rezervasyon sonucunuzu görüntüleyin               
-                    </div>
-                </div>
             </div>
         </div>
 
         <div class="container martop marbot">
-            <asp:DataList class="col-md-7 nopadright rezcont mobnopad" ID="DataList1" runat="server">
+            <asp:DataList class="col-md-7 nopadright rezcont mobnopad" OnItemCommand="btnRez_Click" ID="DataList1" runat="server">
                 <ItemTemplate>
                     <form id="form1" runat="server">
                         <div class="container martop marbot">
@@ -113,9 +105,9 @@
                                         <h1 class="bigtitle subbed nomartop">Kiralanacak Gün sayısı</h1>
                                         <div class="input-group relative rcigroup">
                                             <input type="number" id="UNumber" oninput="multiplyNumbers()" style="background: #ffffff;" class="form-control black" required>
-                                            </div>
                                         </div>
                                     </div>
+                                </div>
                                 <br />
                                 <div class="row">
                                     <div class="col-md-6">
@@ -128,129 +120,103 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="container marbot">
+                                <div class="col-md-12 total rounded">
+                                    Toplam Kiralama Ücreti:
+                    <label id="sonuc"></span>TRY</label>
+                                </div>
+                            </div>
+
+                            <div class="container marbot">
+                                <h1 class="bigtitle nomartop"><strong>Sürücü Bilgileri</strong></h1>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <strong>Adınız</strong>
+                                            <asp:TextBox ID="txtUsername" class="form-control" placeholder="Adınız..." runat="server" ValidateRequestMode="Enabled"></asp:TextBox>
+
+                                            <br>
+                                            <strong>Soyadınız</strong>
+                                            <asp:TextBox ID="TxtSurname" class="form-control" placeholder="Soyadınız..." runat="server" ValidateRequestMode="Enabled"></asp:TextBox>
+
+                                        </div>
+                                        <div class="col-md-6 mobpadtop">
+                                            <strong>Cep Telefonunuz</strong>
+                                            <asp:TextBox ID="TextBoxPhone" class="form-control phone" placeholder="Cep Telefonunuz..." runat="server" ValidateRequestMode="Enabled"></asp:TextBox>
+
+                                            <br>
+                                            <strong>E-posta Adresiniz</strong>
+                                            <asp:TextBox ID="TextBoxEmail" class="form-control" placeholder="E-posta Adresiniz..." runat="server" ValidateRequestMode="Enabled"></asp:TextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="sozlesmebox rounded">
+                                        <label class="extcheck">
+                                            <input type="checkbox" name="sozlesme" value="1" required="required" checked="checked">
+                                            Kiralama şartlarını okudum, onayladım ve kabul ediyorum</label>
+                                    </div>
+
+                                    <div class="odemebox">
+                                        <h1 class="bigtitle" style="margin-bottom: 0px !important;"><strong>Ödeme Seçenekleri</strong></h1>
+
+                                        <div class="tab-content">
+                                            <div id="other" class="tab-pane fade in active">
+                                                <label class="extcheck full">
+                                                    <input type="radio" name="odeme" checked="checked" value="1">
+                                                    Nakit</label>
+                                                <label class="extcheck full">
+                                                    <input type="radio" name="odeme" value="2">
+                                                    Banka Havalesi / EFT</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div align="center">
+                                <div style="width: 360px; margin: 0px auto;">
+                                    <table cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="form-control" name="capt" autocomplete="off" required="" placeholder="Güvenlik kodu...">
+                                                </td>
+                                                <td style="padding-left: 15px;">
+                                                    <img src="https://tema19.otokiralamascripti.net/captcha.php" alt="CAPTCHA" id="capim" style="border-radius: 8px;">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div align="center" style="margin: 0px 330px" class="container marbot">
+                                <div class="col-md-6">
+                                    <br />
+                                    <br />
+                                    <asp:LinkButton ID="btnRez" Class="btn turanj btn-lg" runat="server" CommandName="rezz">Rezervasyonu Tamamla</asp:LinkButton>
+                                </div>
+                            </div>
                     </form>
                 </ItemTemplate>
             </asp:DataList>
         </div>
 
-        <form method="post" target="_self" enctype="application/x-www-form-urlencoded" onsubmit="return reserve(this, event);">
-            <input type="hidden" name="do" value="reserve">
+        <script>
+            function multiplyNumbers() {
+                // Kullanıcının girdiği sayıyı al
+                var userInput = document.getElementById("UNumber").value;
 
-            <div class="container marbot">
-                <div class="col-md-12 total rounded">
-                    Toplam Kiralama Ücreti:
-                    <label><span id="sonuc"></span> TRY</label>
-                </div>
-            </div>
+                // Sabit bir sayı ile çarp
+                var constantNumber = 250;  // Bu sayıyı kendi ihtiyacınıza göre değiştirin
 
-            <div class="container marbot">
-                <h1 class="bigtitle nomartop"><strong>Sürücü Bilgileri</strong></h1>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <strong>Adınız Soyadınız</strong>
-                            <input type="text" class="form-control" name="ad" required="" placeholder="Adınız Soyadınız...">
+                var result = userInput * constantNumber;
 
-                            <br>
-                            <strong>Doğum Tarihiniz</strong>
-                            <input type="text" class="form-control datepickyears hasDatepicker" readonly="readonly" name="dogum" required="" placeholder="Doğum Tarihiniz..." id="dp1704229942446" style="background: rgb(255, 255, 255);">
+                // Sonucu HTML içine yazdır
+                document.getElementById("sonuc").innerText = result;
 
-                            <br>
-                            <strong>Uçuş Notları</strong>
-                            <textarea class="form-control" name="ucus" placeholder="İsteğe bağlı olarak doldurulabilir......"></textarea>
-                        </div>
-                        <div class="col-md-6 mobpadtop">
-                            <strong>Cep Telefonunuz</strong>
-                            <input type="text" class="form-control phone" name="cep" required="" placeholder="Cep Telefonunuz...">
-
-                            <br>
-                            <strong>E-posta Adresiniz</strong>
-                            <input type="text" class="form-control" name="email" required="" placeholder="E-posta Adresiniz...">
-
-                            <br>
-                            <strong>Özel Notlar</strong>
-                            <textarea class="form-control" name="ozel" placeholder="İsteğe bağlı olarak doldurulabilir......"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="uyebox rounded">
-                        <label class="extcheck">
-                            <input type="checkbox" name="uyeol" onclick="setuyebox(this);">
-                            Girdiğim e-posta adresi ile üye olmak istiyorum</label>
-                        <div class="row">
-                            <div class="col-md-6 pad20">
-                                <strong>Şifre Girin</strong>
-                                <input type="password" class="form-control" name="pass1" id="pass1" placeholder="********">
-                            </div>
-                            <div class="col-md-6 pad20">
-                                <strong>Şifreyi Tekrar Girin</strong>
-                                <input type="password" class="form-control" name="pass2" id="pass2" placeholder="********">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sozlesmebox rounded" style="display: none;">
-                        <label class="extcheck">
-                            <input type="checkbox" name="sozlesme" value="1" required="required" checked="checked">
-                            Kiralama şartlarını okudum, onayladım ve kabul ediyorum</label>
-                    </div>
-
-                    <div class="odemebox">
-                        <h1 class="bigtitle" style="margin-bottom: 0px !important;"><strong>Ödeme Seçenekleri</strong></h1>
-
-                        <div class="tab-content">
-                            <div id="other" class="tab-pane fade in active">
-                                <label class="extcheck full">
-                                    <input type="radio" name="odeme" checked="checked" value="1">
-                                    Nakit</label>
-                                <label class="extcheck full">
-                                    <input type="radio" name="odeme" value="2">
-                                    Banka Havalesi / EFT</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div align="center">
-                <div style="width: 360px; margin: 0px auto;">
-                    <table cellpadding="0" border="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="capt" autocomplete="off" required="" placeholder="Güvenlik kodu...">
-                                </td>
-                                <td style="padding-left: 15px;">
-                                    <img src="https://tema19.otokiralamascripti.net/captcha.php" alt="CAPTCHA" id="capim" style="border-radius: 8px;">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <br>
-                <br>
-                <input type="submit" class="btn turanj btn-lg" value="Rezervasyonu Tamamla">
-                <br>
-                <br>
-            </div>
-        </form>
-
-            <script>
-                function multiplyNumbers() {
-                    // Kullanıcının girdiği sayıyı al
-                    var userInput = document.getElementById("UNumber").value;
-
-                    // Sabit bir sayı ile çarp
-                    var constantNumber = 5;  // Bu sayıyı kendi ihtiyacınıza göre değiştirin
-
-                    var result = userInput * constantNumber;
-
-                    // Sonucu HTML içine yazdır
-                    document.getElementById("sonuc").innerText = result;
-
-                }
-    </script>  </script>>
+            }
+        </script>
 
         <script type="text/javascript" src="https://tema19.otokiralamascripti.net/assets/js/system.js"></script>
         <link rel="stylesheet" type="text/css" href="https://tema19.otokiralamascripti.net/assets/css/system.css">
@@ -269,10 +235,6 @@
         </script>
     </body>
     </html>
-
-
-    </div>
-
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
